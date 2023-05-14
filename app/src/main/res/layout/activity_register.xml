@@ -15,7 +15,7 @@
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:padding="5dp"
-        android:text="UMBC Parking App"
+        android:text="UMBC Parking Registration Page"
         android:textAlignment="center"
         android:textColor="#020202"
         android:textSize="18sp" />
@@ -48,42 +48,40 @@
         android:inputType="textPassword"
         android:minHeight="48dp" />
 
-    <!--button to register our new user-->
-    <Button
-        android:id="@+id/idBtnLogin"
+    <EditText
+        android:id="@+id/idEdtCampusID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/idEdtPassword"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:text="Login"
-        android:textAllCaps="false"
-        android:textColorHighlight="#C88625"
-        android:textColorLink="#A57024" />
+        android:hint="Enter Your Campus ID"
+        android:inputType="textPassword"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/idEdtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idEdtCampusID"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Enter Your Email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/idBtnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/idBtnLogin"
+        android:layout_below="@+id/idEdtEmail"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:textAllCaps="false"
-        android:text="Register Now" />
-
-    <Button
-        android:id="@+id/idGoogleRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/idBtnRegister"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:text="Sign In or Sign Up With Google"
+        android:text="Register Now"
         android:textAllCaps="false" />
-
 
     <ImageView
         android:id="@+id/imageView"
@@ -96,6 +94,5 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="0dp"
         app:srcCompat="@drawable/umbclogo" />
-
 
 </RelativeLayout>
