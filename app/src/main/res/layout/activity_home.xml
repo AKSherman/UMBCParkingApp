@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,47 +8,135 @@
 
     <!--text view for displaying heading-->
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/idBtnLogout"
-        app:srcCompat="@drawable/Umbcmap" />
+    <!--text view for displaying user name-->
+
+    <!--button for making user log out-->
 
     <TextView
         android:id="@+id/idTVHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#8E8E8E"
         android:gravity="center_horizontal"
         android:text="Welcome to the UMBC Parking App"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!--text view for displaying user name-->
     <TextView
         android:id="@+id/idTVUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVHeader"
         android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="#8E8E8E"
         android:gravity="center_horizontal"
         android:text="UserName"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idTVHeader" />
 
-    <!--button for making user log out-->
     <Button
         android:id="@+id/idBtnLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVUserName"
         android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="162dp"
+        android:layout_marginEnd="162dp"
         android:text="Log Out"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+    <ScrollView
+        android:layout_width="320dp"
+        android:layout_height="323dp"
+        app:layout_constraintBottom_toTopOf="@+id/idBtnLogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zone A Parking Spot 1" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zone A Parking Spot 2" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zone A Parking Spot 3" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zone A Parking Spot 4" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="390dp"
+        android:layout_height="387dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idTVUserName"
+        app:srcCompat="@drawable/umbcmap" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
