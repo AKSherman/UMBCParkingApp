@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.identity.BeginSignInRequest;
+import com.google.android.gms.auth.api.identity.Identity;
+import com.google.android.gms.auth.api.identity.SignInClient;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -23,16 +26,30 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText userNameEdt, passwordEdt, campusIdEdt, emailEdt;
     private Button registerBtn;
 
+    private SignInClient oneTapClient;
+    private BeginSignInRequest signUpRequest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        Parse.initialize(new Parse.Configuration.Builder(this)
+
+        Parse.initialize(new Parse.Configuration.Builder(RegisterActivity.this)
                 .applicationId(getString(R.string.back4app_app_id))
                 .clientKey(getString(R.string.back4app_client_key))
                 .server(getString(R.string.back4app_server_url))
                 .build());
 
+        oneTapClient = Identity.getSignInClient(RegisterActivity.this);
+        signUpRequest = BeginSignInRequest.builder()
+                .setGoogleIdTokenRequestOptions(BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
+                        .setSupported(true)
+                        // Your server's client ID, not your Android client ID.
+                        .setServerClientId(getString(R.string.your_web_client_id))
+                        // Show all accounts on the device.
+                        .setFilterByAuthorizedAccounts(false)
+                        .build())
+                .build();
 
         // initializing our edit text  and buttons.
         userNameEdt = findViewById(R.id.idEdtUserName);

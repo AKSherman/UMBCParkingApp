@@ -69,6 +69,8 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
     implementation "com.github.parse-community.Parse-SDK-Android:parse:latest-version-here"
+    implementation 'com.google.android.gms:play-services-auth:20.5.0'
+
 
 
 }

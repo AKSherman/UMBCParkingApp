@@ -83,11 +83,22 @@
         android:text="Register Now"
         android:textAllCaps="false" />
 
+    <Button
+        android:id="@+id/idBtnGoogleRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idBtnRegister"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="Register With Google"
+        android:textAllCaps="false" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="248dp"
         android:layout_height="309dp"
-        android:layout_below="@+id/idBtnRegister"
+        android:layout_below="@+id/idBtnGoogleRegister"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="0dp"
